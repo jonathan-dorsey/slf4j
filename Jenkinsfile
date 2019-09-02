@@ -31,7 +31,7 @@ pipeline {
 
     stage('Release') {
       steps {
-        sh 'mvn release'
+        echo 'Perform maven release for version'
       }
     }
   }
