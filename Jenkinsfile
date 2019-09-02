@@ -20,5 +20,17 @@ pipeline {
         echo 'Perform static code analysis!'
       }
     }
+
+    stage('Prompt Release') {
+      steps {
+        input "Release project?" 
+      }
+    }
+
+    stage('Release') {
+      steps {
+        sh 'mvn release'
+      }
+    }
   }
 }
