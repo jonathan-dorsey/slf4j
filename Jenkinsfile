@@ -5,16 +5,6 @@ pipeline {
       timeout(time: 5, unit: 'MINUTES') 
   }
 
-  properties(
-    [
-      pipelineTriggers(
-        [ 
-          githubPush()
-        ]
-      )
-    ]
-  )
-
   stages {
 
     stage('Build') {
