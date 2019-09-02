@@ -1,6 +1,8 @@
 #!/bin/env groovy
 
 pipeline {
+  agent any
+
   options {
       timeout(time: 5, unit: 'MINUTES') 
   }
