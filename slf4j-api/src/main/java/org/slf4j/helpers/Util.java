@@ -32,10 +32,23 @@ package org.slf4j.helpers;
  */
 public final class Util {
 
-	
+
     private Util() {
     }
-    
+
+		public static String safeGetSystemProperty(String key) {
+				if (key == null)
+						throw new IllegalArgumentException("null input");
+
+				String result = null;
+				try {
+						result = System.getProperty(key);
+				} catch (java.lang.SecurityException sm) {
+						; // ignore
+				}
+				return result;
+		}
+
     public static String safeGetSystemProperty(String key) {
         if (key == null)
             throw new IllegalArgumentException("null input");
@@ -127,7 +140,7 @@ public final class Util {
     static final public void report(String msg) {
         System.err.println("SLF4J: " + msg);
     }
-    
-	
+
+
 
 }
