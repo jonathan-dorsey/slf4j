@@ -36,30 +36,6 @@ public final class Util {
     private Util() {
     }
     
-    public static void lookIAddedAMethod(String key) {
-        if (key == null)
-            throw new IllegalArgumentException("null input");
-
-        String result = null;
-        try {
-            result = System.getProperty(key);
-        } catch (java.lang.SecurityException sm) {
-            ; // ignore
-        }
-    }
-
-    public static void lookIAddedAnotherMethod(String key) {
-        if (key == null)
-            throw new IllegalArgumentException("null input");
-
-        String result = null;
-        try {
-            result = System.getProperty(key);
-        } catch (java.lang.SecurityException sm) {
-            ; // ignore
-        }
-    }
-
     public static String safeGetSystemProperty(String key) {
         if (key == null)
             throw new IllegalArgumentException("null input");
