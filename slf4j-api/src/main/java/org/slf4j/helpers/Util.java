@@ -36,6 +36,19 @@ public final class Util {
     private Util() {
     }
 
+    public static String myNewMethod(String key) {
+        if (key == null)
+            throw new IllegalArgumentException("null input");
+
+        String result = null;
+        try {
+            result = System.getProperty(key);
+        } catch (java.lang.SecurityException sm) {
+            ; // ignore
+        }
+        return result;
+    }
+
     public static String safeGetSystemProperty(String key) {
         if (key == null)
             throw new IllegalArgumentException("null input");
