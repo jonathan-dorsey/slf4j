@@ -36,7 +36,7 @@ public final class Util {
     private Util() {
     }
 
-		public static String safeGetSystemProperty(String key) {
+		public static String myNewMethod(String key) {
 				if (key == null)
 						throw new IllegalArgumentException("null input");
 
